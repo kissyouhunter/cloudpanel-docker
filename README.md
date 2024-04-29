@@ -14,20 +14,14 @@ apt install -y wget curl sudo git
 ```bash
 # 安装docker
 curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh
-
-# 安装 docker-compose
-curl -L "https://github.com/docker/compose/releases/download/v2.23.0/docker-compose-linux-$(uname -m)" -o /usr/local/bin/docker-compose
-chmod +x /usr/local/bin/docker-compose
-rm -f `which dc`
-ln -s /usr/local/bin/docker-compose /usr/bin/dc
 ```
 下载程序
 ```bash
-git clone https://github.com/cdntip/cloudpanel-docker.git
+git clone https://github.com/kissyouhunter/cloudpanel-docker.git
 cd cloudpanel-docker
-dc up mysql -d
+docker compose up mysql -d
 # 等待mysql启动之后， 再执行下面的命令
-dc up -d
+docker compose up -d
 ```
 查看管理员账号
 ```bash
